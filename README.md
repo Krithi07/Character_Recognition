@@ -56,6 +56,6 @@ This is a basic model which gives ~95% accuracy at character level. Below are a 
 3. Generalize the model by editing the Code_image_text file. Currently, the code has some restrictions as mentioned below. By editing some hard-coded parts in this file, the model can be made more general purpose. 
   a. Only predicts on 28 x 28 pixel images from the EMNIST dataset
   b. Only predicts and gets trained on 5 letter words
- 
+EMNIST_general_functions file contains function that helps you create word images from the EMNIST dataset. This function can be used to create different training/testing sets eliminating the restrictions of 5 word length
 
 
