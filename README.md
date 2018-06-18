@@ -20,6 +20,7 @@ X is a matrix of size 28n x 28L where n is the number of input samples and L is 
 ### Test Set 
 'emnist words.Rdata'- The file contains example of 1000 words of length 5. The variable X contains the images of words, the variable y contains the true words (labels), and the variable y_hat contains predictions by a 2 layers neural network, combined with a 2-nd order Markov model. Example Image -
 
+![image](https://user-images.githubusercontent.com/9217362/41533189-90cd51fe-7317-11e8-9bb0-79b121cf88dd.png)
 
 ## The repo contains following files -
 
@@ -31,3 +32,8 @@ This function takes as input a 2D array X of word images, and learned model for 
 3. 'TEXT_Model.Rdata' - with a variable called m:text. This variable represents a text model (including parameters) that we learned to represent natural English text distribution.
 
 4. 'EMNIST_general_functions.R' - This file has helper functions to allow accessing the EMNIST dataset
+
+5. 'EMNIST_run.R'- This is the code testing file
+
+## Run the code -
+Put all the files mentioned above in a directory of your choice, and run the 'EMNIST_run.R' file. This will give out the character accuracy and the word accuracy to evaluate the model
