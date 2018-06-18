@@ -3,7 +3,6 @@ library(R.utils)
 library(keras)
 
 rm(list=ls())
-setwd("C:/Users/Kritika.Jalan/Desktop/Fiverr/Arik/Character Recognition/Test")
 source("EMNIST_general_functions.R")
 
 
