@@ -1,4 +1,4 @@
-# Word Predictor from handwritten english text images
+# Word Predictor from Handwritten English Text Images
 
 This is an implementation of image to word predictor in R. 
 
