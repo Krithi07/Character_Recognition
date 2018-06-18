@@ -1,10 +1,8 @@
 #Install necessary datasets
-#install.packages("devtools")
-#devtools::install_github("rstudio/keras")
+install.packages("devtools")
+devtools::install_github("rstudio/keras")
 
-#Text Corpus: http://www.anc.org/data/oanc/download/
-
-setwd('C:/Users/Kritika.Jalan/Desktop/Fiverr/Arik/Character Recognition')
+setwd('....')
 source("EMNIST_general_functions.R")
 
 library(keras)
@@ -60,6 +58,13 @@ save_model_hdf5(m.image, file = "EMNIST_Model_Champ.h5")
 
 #--------------------------------------------------TEXT ANALYTICS------------------------------------------------------#
 
+# Text Corpus: http://www.anc.org/data/oanc/download/
+# Download the dataset from here to train your model on and save it in the 'Text' object
+# I used the files from fiction folder in OANC_GrAF_Corpus\OANC-GrAF\data\written_1
+# One can use any english text corpus for training. 
+# I have uploaded a sample file which can be directly used as corpus 
+# That is, if you do not want to go through all the hassles of downloading a file yourself
+
 TextRead <- function(Text) {
   Corpus <- read.csv(Text, header = F, sep = " ", stringsAsFactors = F)
   Corpus <- unlist(Corpus)
@@ -74,6 +79,8 @@ TextRead <- function(Text) {
 FreqN <- function(Words, n1, n2) {
   # Frequency table of substrings in words from n1 to n2
   table(sapply(Words, function(x) substring(x, n1, n2)))}
+
+# Using Hidden Markov Model for building a text analytics model 
 
 HMMTrain <- function(Text) {
   
