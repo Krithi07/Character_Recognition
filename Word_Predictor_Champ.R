@@ -1,17 +1,19 @@
-ID <- 203667464
-
 #X is a matrix of size 28nx28L where n is the number of input samples and L is the length
 #of words (for example, for 100 words of length 5, X will be of size 2800 x 140).
 
+# X is the test set
+# m.image is the trained EMNIST Image Model
+# m.text is the trained Text Model
+
 PredictModelWord <- function(X, m.image, m.text){
-  input <- X 
+  input <- X c
   image_pix = 28
   word_len <- dim(X)[2] / image_pix
   word_cnt <- dim(X)[1] / image_pix
   image_model  <- m.image
   text_model <- matrix(unlist(m.text), ncol = 4, byrow = TRUE)
   
-  # Reshaping the input matrix to (nxl, 784)
+  # Reshaping the input matrix to (nxl, 28x28)
   
   trans_input <- matrix(0,word_cnt*word_len,image_pix*image_pix)
   
@@ -52,8 +54,9 @@ PredictModelWord <- function(X, m.image, m.text){
       
       next_wrd<- a+1 #Next Character index
 
-      y_hat_p[next_wrd] <- which.max(case_ins_predictions[next_wrd,]*(text_model[next_char_list,j]+0.17)) #Ensuring text_model's 0 prob doesn't affect prediction
-      
+      y_hat_p[next_wrd] <- which.max(case_ins_predictions[next_wrd,]*(text_model[next_char_list,j]+0.17)) 
+      #Ensuring text_model's 0 prob doesn't affect prediction
+      # If the corpus is not big enough, we get 0 prob for some next possible letters
     }
   }
 
