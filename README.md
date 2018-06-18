@@ -7,8 +7,8 @@ There are 2 models created in order for us to reach to the goal. First will be w
 ## Table of Contents -
 [Data](#data)  
 [Repository Files](#repository-files)  
-[Code Execution](#run)  
-[Model Improvements](#improve)  
+[Code Execution](#code-execution)  
+[Model Improvements](#model-improvements)  
 
 ## Data
 The training and testing sets are both created using the letter images from EMNIST dataset. The EMNIST dataset contains 697; 932 labeled images of size 28 x 28 in the training set and 116; 323 labeled images in the test set. The images are represented in gray-scale,where each pixel value, from 0 to 255, represents its darkness level.There are multiple datasets in the file (see EMNIST documentation for explanations)
@@ -28,7 +28,7 @@ X is a matrix of size 28n x 28L where n is the number of input samples and L is 
 
 ![image](https://user-images.githubusercontent.com/9217362/41533189-90cd51fe-7317-11e8-9bb0-79b121cf88dd.png)
 
-## Repository files -
+## Repository files
 
 1. **'Word_Predictor_Champ.R'** - This file contains a function PredictModelWord 
 This function takes as input a 2D array X of word images, and learned model for images m:image, a learned text model m:text. The function returns a 1D array of string labels y, where each element of the array is a string of length L.
@@ -43,10 +43,10 @@ This function takes as input a 2D array X of word images, and learned model for 
 
 6. **'EMNIST_run.R'**- This is the code testing file
 
-## Code Execution -
+## Code Execution
 Put all the files mentioned above in a directory of your choice, and run the 'EMNIST_run.R' file. This will give out the character accuracy and the word accuracy to evaluate the model
 
-## Model Improvements -
+## Model Improvements
 This is a basic model which gives ~95% accuracy at character level. Below are a few ideas you can try to improve this model:
 
 1. Use a huge text corpus to improve upon the text model. You can use [Wikipedia](https://www.wikipedia.org) corpus to train a better text model. Or, use a pre-trained model from the web
